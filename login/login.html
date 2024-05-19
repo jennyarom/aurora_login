@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <link rel="icon" href="Img/logo.svg" type="image/png">
+    <title>Login</title>
+</head>
+<body style="background-image: url(Img/registro.jpg); background-size: cover;">
+    <div class="container">
+        <img id="logo" src="Img/logo.svg" alt="">
+        <h1>Login</h1>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required><br>
+            <input type="password" id="password" placeholder="Password" required><br>
+            <button type="submit">Login</button>
+        </form>
+        <div class="register-link">
+            <p>¿No tienes una cuenta? <a href="/register" id="registerLink">Regístrate aquí</a></p>
+            <a href="/">Inicio</a>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="/js/client.js"></script>
+</body>
+</html>

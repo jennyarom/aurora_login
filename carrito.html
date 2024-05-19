@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="spa">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/carro.css">
+    <link rel="icon" href="Img/logo.svg" type="image/png">
+    <!-- Font Awesome -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+rel="stylesheet"
+/>
+<!-- Google Fonts -->
+<link
+href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+rel="stylesheet"
+/>
+<!-- MDB -->
+<link
+href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+rel="stylesheet"
+/>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>Aurora Cosmética</title>
+</head>
+<body>
+    <header>
+        <!-- Navbar -->
+        <nav  class="navbar navbar-expand-lg bg-body fixed-top" >
+          <div  class="container-fluid">
+            <button
+              data-mdb-collapse-init
+              class="navbar-toggler"
+              type="button"
+              data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+              <img
+          src="/Img/logo.svg"
+          height="15"
+          alt="MDB Logo"
+          loading="lazy"
+        />
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              </ul>
+              <div class="d-flex align-items-center">
+                <button id="logout" type="button" class="btn btn-danger me-3">
+                <a href="/logout" class="logout-button">Cerrar sesión</a>
+              </div>
+            </div>
+              
+            </div>
+          </div>
+        </nav>
+     
+        <!-- Navbar -->
+      
+      <!-- carrusel -->
+       </form>
+      <div id="carouselExampleControls" class="carousel slide" data-mdb-ride="carousel" data-mdb-carousel-init>
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <img src="https://www.telemundo.com/sites/nbcutelemundo/files/images/article/cover/2020/01/07/productos_belleza_2020.jpg" class="d-block w-100" alt="belleza1"/>
+          </div>
+          <div class="carousel-item">
+            <img src="https://img.bekiabelleza.com/articulos/portada/81000/81137.jpg" class="d-block w-100" alt="belleza2"/>
+          </div>
+          <div class="carousel-item">
+            <img src="https://image-tc.galaxy.tf/wijpeg-617m5gw10m62txxfbki2msqjy/foto-1.jpg?width=1920" class="d-block w-100" alt="belleza3"/>
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-mdb-target="#carouselExampleControls" data-mdb-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+      <!-- Carro de compras -->
+      <section class="contenedor">
+        <!-- Contenedor de elementos -->
+        <div class="contenedor-items">
+            <!-- Inicio de un elemento en el contenedor.-->
+            <div class="item">
+                <span class="titulo-item">Sirius</span>
+                <img src="img/SIRIUS.jpg" alt="" class="img-item">
+                <span class="precio-item">$15.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Actual</span>
+                <img src="img/actual.png" alt="" class="img-item">
+                <span class="precio-item">$10.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Base Alta Cobertura</span>
+                <img src="img/base.jpg" alt="" class="img-item">
+                <span class="precio-item">$65.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Blush Rose</span>
+                <img src="img/blush.png" alt="" class="img-item">
+                <span class="precio-item">$28.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Charlie</span>
+                <img src="img/charlie.png" alt="" class="img-item">
+                <span class="precio-item">$22.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Free</span>
+                <img src="img/free.png" alt="" class="img-item">
+                <span class="precio-item">$18.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Humberto</span>
+                <img src="img/Humberto.png" alt="" class="img-item">
+                <span class="precio-item">$14.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Jungle palette</span>
+                <img src="img/jungle.jpg" alt="" class="img-item">
+                <span class="precio-item">$42.000</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Set Natural</span>
+                <img src="img/natural.jpg" alt="" class="img-item">
+                <span class="precio-item">$42.800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Gel Passo</span>
+                <img src="img/paso.png" alt="" class="img-item">
+                <span class="precio-item">$42.800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Midnight</span>
+                <img src="img/pearl.png" alt="" class="img-item">
+                <span class="precio-item">$42.800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+            <div class="item">
+                <span class="titulo-item">Nude red</span>
+                <img src="img/rare.jpg" alt="" class="img-item">
+                <span class="precio-item">$42.800</span>
+                <button class="boton-item">Agregar al Carrito</button>
+            </div>
+        </div>
+        <!-- Carrito de Compras -->
+        <div class="carrito" id="carrito">
+            <div class="header-carrito">
+                <h2>Tu Carrito</h2>
+            </div>
+
+            <div class="carrito-items"> 
+            </div>
+            <div class="carrito-total">
+                <div class="fila">
+                    <strong>Tu Total</strong>
+                    <span class="carrito-precio-total">
+                        $120.000,00
+                    </span>
+                </div>
+                <button class="btn-pagar">Pagar <i class="fa-solid fa-bag-shopping"></i> </button>
+            </div>
+        </div>
+    </section>
+      <!-- Footer -->
+      <footer id="contacto" class="bg-body-tertiary text-center">
+        <!-- Grid container -->
+        <div class="container p-4 pb-0">
+          <!-- Facebook -->
+      <a
+      data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #3b5998;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-facebook-f"></i
+      ></a>
+
+      <!-- Twitter -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #55acee;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-twitter"></i
+      ></a>
+
+      <!-- Google -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #dd4b39;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-google"></i
+      ></a>
+
+      <!-- Instagram -->
+      <a
+        data-mdb-ripple-init
+        class="btn text-white btn-floating m-1"
+        style="background-color: #ac2bac;"
+        href="#!"
+        role="button"
+        ><i class="fab fa-instagram"></i
+      ></a>
+      
+    
+    <!-- Section: Social media -->
+      </div>
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgb(241, 162, 188)">
+          © 2024 Copyright:
+          <a class="text-body" href="#">Aurora Cosmética</a>
+        </div>
+        <!-- Copyright -->
+      </footer>
+<!-- Footer -->
+    <!-- MDB -->
+<script
+type="text/javascript"
+src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
+></script>
+<script src="js/carro.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
