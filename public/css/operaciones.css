@@ -1,0 +1,75 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  #delete-form{
+    background-color: rgb(247, 237, 248, 0.8);
+  }
+  
+  .container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .operation {
+    background-color: rgb(255, 255, 255,0.8);
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .operation h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  label {
+    margin-bottom: 5px;
+  }
+  .container {
+    padding: 20px; /* Añade espacio interno alrededor del contenido */
+    margin: 20px; /* Añade espacio externo alrededor del contenedor */
+    border: 1px solid #ddd; /* Añade un borde para visualizar mejor el contenedor */
+    border-radius: 8px; /* Bordes redondeados para mejor apariencia */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Añade una sombra para un efecto visual */
+    box-sizing: border-box; /* Asegura que el padding se incluya en el tamaño total */
+  }
+  input,
+  button {
+  padding: 8px 12px; /* Ajusta el padding para un mejor aspecto */
+  margin-bottom: 10px;
+  border-radius: 4px;
+  width: auto; /* Cambia el ancho a auto para que se ajuste al contenido */
+  min-width: 100px; /* Establece un ancho mínimo para garantizar que no sean demasiado estrechos */
+  border: 1px solid #ccc; /* Añade un borde sutil */
+  box-sizing: border-box; /* Esto garantiza que el ancho incluya el padding */
+  font-size: 14px; /* Ajusta el tamaño de la fuente para mejor apariencia */
+  }
+  
+  /* Si deseas aplicar diferentes estilos a los botones */
+  button {
+  background-color: palevioletred; /* Color de fondo del botón */
+  color: white; /* Color del texto del botón */
+  cursor: pointer; /* Cambia el cursor al pasar por encima del botón */
+  }
+  
+  /* Estilo para cuando el botón está siendo presionado */
+  button:active {
+  background-color: #7400b3;
+  }
+  

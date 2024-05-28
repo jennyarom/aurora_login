@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="spa">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,12 +64,13 @@ rel="stylesheet"
               <div class="d-flex align-items-center">
                 
                 <button id="carro" type="button" class="btn btn-danger me-3">
-                <a class="nav-link" href="/carrito"><i class="fas fa-shopping-cart"></i></a>              
+                <a class="nav-link" href="/login"><i class="fas fa-shopping-cart"></i></a>              
                 </button>
-                <button id="registro" type="button" class="btn btn-danger me-3">
-                <a href="/login">Iniciar Sesión</a>
+                
                 <button id="registro" type="button" class="btn btn-danger me-3">
                 <a href="/register">Registrarse</a>
+                <button id="registro" type="button" class="btn btn-danger me-3">
+                  <a href="/crud/get.html">Administrador</a>
                 
               </div>
             </div>
@@ -130,7 +131,7 @@ rel="stylesheet"
                 <div class="card-body">
                   <h5 class="card-title">Esmaltes</h5>
                   <p class="card-text">Nos inspiramos en las frutas del verano y creamos los nuevos esmaltes de Color Trend. Son perfectos para crear nail art con un estilo vibrante y colorido.</p>
-                  <a href="/carrito" class="btn btn-danger" data-mdb-ripple-init>Compra</a>
+                  <a href="/login" class="btn btn-danger" data-mdb-ripple-init>Compra</a>
                 </div>
               </div>
           </div>
@@ -140,7 +141,7 @@ rel="stylesheet"
                 <div class="card-body">
                   <h5 class="card-title">Sombras</h5>
                   <p class="card-text">Nuestras espectaculares sombras para párpados combina tonos vibrantes que proporcionan un resultado impactante. Formuladas con la tecnología Ultra Color que otorga mayor cobertura y larga duración. Vienen con esfumino y espejo.</p>
-                  <a href="/carrito" class="btn btn-danger" data-mdb-ripple-init>Compra</a>
+                  <a href="/login" class="btn btn-danger" data-mdb-ripple-init>Compra</a>
                 </div>
               </div>
           </div>
@@ -221,17 +222,17 @@ rel="stylesheet"
       <h3>¿Quiénes somos?</h3>
       <div class="card-group">
         <div class="card">
-          <img id="carlos" src="/Img/carlos.jpg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
+          <img id="jose" src="/Img/jose.jpeg" class="card-img-top" alt="Hollywood Sign on The Hill"/>
           <div class="card-body">
-            <h5 class="card-title">Compañero</h5>
+            <h5 class="card-title">José Ávila</h5>
             <p class="card-text">
-              This is a wider card with supporting text below as a natural lead-in to
-              additional content. This content is a little bit longer.
+              Desarrollador full Stack respomsable de programar en el front end y el back end.  
             </p>
           </div>
         </div>
         <div class="card">
           <img id="jenny" src="/Img/jenny.jpg" class="card-img-top" alt="integrante"/>
+          
           <div class="card-body">
             <h5 class="card-title">Jenny Arias</h5>
             <p class="card-text">Desarroladora Full Stack, responsable de controlar tanto el front-end (cliente) como el back-end (servidor).</p>
@@ -298,7 +299,7 @@ rel="stylesheet"
 type="text/javascript"
 src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.umd.min.js"
 ></script>
-<script src="server.js"></script>
+<script src="/login.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 </html>

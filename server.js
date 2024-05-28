@@ -8,9 +8,15 @@ const mysql = require('mysql');
 const bcrypt = require('bcrypt');
 // Importa el módulo path para manejar rutas de archivos y directorios
 const path = require('path');
+// Importa el módulo CORS para permitir solicitudes desde otros dominios
+const cors = require('cors');
 
 // Crea una instancia de la aplicación Express
 const app = express();
+
+// Habilita CORS para permitir solicitudes desde otros dominios
+app.use(cors());
+
 // Establece el puerto en el que el servidor escuchará las solicitudes
 const port = 3000;
 
@@ -30,8 +36,10 @@ db.connect((err) => {
     console.log('Conexión a la base de datos establecida');
 });
 
-// Configura el middleware bodyParser para analizar datos de solicitud codificados en URL
+// Configura el middleware bodyParser para analizar datos de solicitud codificados en URL y JSON
 app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+
 // Configura Express para servir archivos estáticos desde el directorio 'public'
 app.use(express.static('public'));
 
@@ -50,81 +58,150 @@ app.get('/register', (req, res) => {
     res.sendFile(path.join(__dirname, 'register', 'registro.html'));
 });
 
+// Define la ruta para la página del carrito
+app.get('/carrito', (req, res) => {
+    res.sendFile(path.join(__dirname, 'carrito.html'));
+});
+
+// Definir la ruta para el cierre de sesión
+app.get('/logout', (req, res) => {
+    res.redirect('/login');
+});
+
 // Maneja las solicitudes POST para iniciar sesión
 app.post('/login', (req, res) => {
     const { username, password } = req.body;
     const query = 'SELECT * FROM usuario WHERE username = ?';
-    // Realiza una consulta a la base de datos para obtener el usuario con el nombre de usuario proporcionado
     db.query(query, [username], (err, result) => {
         if (err) {
-            throw err;;
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).json({ error: 'Error interno del servidor' });
+            return;
         }
-        // Verifica si se encontró un usuario con el nombre de usuario proporcionado
         if (result.length > 0) {
             const hashedPassword = result[0].password;
-            // Compara la contraseña proporcionada con la contraseña almacenada usando bcrypt
             bcrypt.compare(password, hashedPassword, (err, bcryptResult) => {
+                if (err) {
+                    console.error('Error al comparar contraseñas:', err);
+                    res.status(500).json({ error: 'Error interno del servidor' });
+                    return;
+                }
                 if (bcryptResult) {
-                    // Si las contraseñas coinciden, devuelve un objeto JSON con exists: true
                     res.json({ exists: true });
                 } else {
-                    // Si las contraseñas no coinciden, devuelve un objeto JSON con exists: false
                     res.json({ exists: false });
                 }
             });
         } else {
-            // Si no se encuentra ningún usuario, devuelve un objeto JSON con exists: false
             res.json({ exists: false });
         }
     });
 });
 
-// Manejar las solicitudes POST para registrar un nuevo usuario
+// Maneja las solicitudes POST para registrar un nuevo usuario
 app.post('/register', (req, res) => {
     const { name, username, password } = req.body;
     const saltRounds = 10;
     const insertUserQuery = 'INSERT INTO usuario (name, username, password) VALUES (?, ?, ?)';
-
-    // Verificar si el nombre de usuario ya esta en uso
     const checkUsernameQuery = 'SELECT * FROM usuario WHERE username = ?';
     db.query(checkUsernameQuery, [username], (err, result) => {
         if (err) {
-            throw err;
+            console.error('Error al realizar la consulta:', err);
+            res.status(500).json({ error: 'Error interno del servidor' });
+            return;
         }
         if (result.length > 0) {
-            // Si el nombre de usuario ya está en uso, devuelve un error
             return res.status(400).json({ error: 'El nombre de usuario ya está en uso' });
         }
-        // Si el nombre de usuario no esta en uso , procede con el registro
         bcrypt.hash(password, saltRounds, (err, hashedPassword) => {
             if (err) {
-                throw err;
+                console.error('Error al cifrar la contraseña:', err);
+                res.status(500).json({ error: 'Error interno del servidor' });
+                return;
             }
-            // insertar el nuevo usuario en la base de datos
             db.query(insertUserQuery, [name, username, hashedPassword], (err, result) => {
                 if (err) {
-                    throw err;
+                    console.error('Error al insertar el usuario:', err);
+                    res.status(500).json({ error: 'Error interno del servidor' });
+                    return;
                 }
-                // Si el registro fue exitoso, nos mostrará una respuesta en objeto JSON
                 res.json({ registered: true });
             });
         });
     });
 });
 
-// Definir la ruta para la página de inicio después de loguearse
-
-app.get('/carrito', (req, res) => {
-    res.sendFile(path.join(__dirname, 'carrito.html'));
+// Maneja las solicitudes GET para consultar personas
+app.get('/CRUDRepo/ConsultarPersonas', (req, res) => {
+    db.query('SELECT * FROM usuario', (err, results) => {
+        if (err) {
+            console.error('Error al ejecutar la consulta:', err);
+            res.status(500).json({ error: 'Error interno del servidor' });
+            return;
+        }
+        res.json(results);
+    });
 });
 
-//Definir la ruta para el cierre de sesión
-app.get('/logout', (req, res) => {
-    // Cuando el usuario cierre sesión , lo tiene que redirigir al login.html
-    res.redirect('/login');
+// Maneja las solicitudes POST para agregar una nueva persona
+app.post('/CRUDRepo/AgregarPersona', (req, res) => {
+    const { name, username, password } = req.body;
+    db.query('INSERT INTO usuario (name, username, password) VALUES (?, ?, ?)', [name, username, password], (err, results) => {
+        if (err) {
+            console.error('Error al agregar la persona:', err);
+            res.status(500).json({ error: 'Error interno del servidor' });
+            return;
+        }
+        res.status(201).json({ message: 'Persona agregada exitosamente' });
+    });
 });
 
-// Especificamos en la consola que el servidor y el puerto estén corriendo
+// Maneja las solicitudes PUT para actualizar una persona
+app.put('/CRUDRepo/ActualizarPersona/:id', (req, res) => {
+    const { id } = req.params;
+    const { name, username } = req.body;
+    if (!name || !username) {
+        return res.status(400).json({ error: 'Faltan datos necesarios' });
+    }
+    db.query('UPDATE usuario SET name = ?, username = ? WHERE id = ?', [name, username, id], (err, results) => {
+        if (err) {
+            console.error('Error al actualizar la persona:', err);
+            res.status(500).json({ error: 'Error interno del servidor' });
+            return;
+        }
+        if (results.affectedRows === 0) {
+            res.status(404).json({ error: 'Persona no encontrada' });
+            return;
+        }
+        res.json({ message: 'Persona actualizada exitosamente' });
+    });
+});
+
+// Maneja las solicitudes DELETE para eliminar una persona
+app.delete('/CRUDRepo/EliminarPersona/:id', (req, res) => {
+    const { id } = req.params;
+    db.query('DELETE FROM usuario WHERE id = ?', [id], (err, results) => {
+        if (err) {
+            console.error('Error al eliminar la persona:', err);
+            res.status(500).json({ error: 'Error interno del servidor' });
+            return;
+        }
+        res.json({ message: 'Persona eliminada exitosamente' });
+    });
+});
+
+// Manejo de errores para rutas no encontradas
+app.use((req, res, next) => {
+    res.status(404).json({ error: 'Ruta no encontrada' });
+});
+
+// Manejador de errores genérico
+app.use((err, req, res, next) => {
+    console.error(err.stack);
+    res.status(500).json({ error: 'Error interno del servidor' });
+});
+
+// Inicia el servidor
 app.listen(port, () => {
     console.log(`Servidor escuchando en http://localhost:${port}`);
 });

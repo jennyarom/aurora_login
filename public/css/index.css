@@ -1,104 +1,107 @@
 /* Estilo para el contenedor de formulario */
 
 form {
-    max-width: 400px; /* Ancho máximo del formulario */
-    margin: 0 auto; /* Centrar el formulario */
-    padding: 20px; /* Espaciado interno */
-  }
-  
-  /* Estilo para los campos de entrada */
-  .form-control {
-    border-radius: 10px; /* Borde redondeado */
-    border: 1px solid #ced4da; /* Borde */
-  }
-  
-  /* Estilo para las etiquetas de los campos de entrada */
-  .form-label {
-    color: #333; /* Color del texto */
-  }
-  
-  /* Estilo para el botón de enviar */
-  .btn-danger {
-    color: #fff; /* Color del texto */
-    border-radius: 10px; /* Borde redondeado */
-  }
-  
-  /* Estilo para los enlaces dentro del texto del formulario */
-  a {
-    color: white; /* Color del enlace */
-  }
-  
-  a:hover {
-    text-decoration: underline; /* Subrayado al pasar el ratón */
-    color: white;
-  }
-  
-  /* Estilo para los botones de registro */
-  .btn-secondary {
-    margin: 5px; /* Margen entre botones */
-  }
-  
-  /* Estilo para los íconos de los botones de registro */
-  .btn-floating i {
-    font-size: 18px; /* Tamaño del ícono */
-  }
-  
-  /* Estilos para el carousel */
-      #carouselExampleInterval {
-        max-width: auto; /* Ancho máximo del carousel */
-        margin: 0 auto; /* Centra el carousel horizontalmente */
-      }
-  
-      .carousel-inner .carousel-item img {
-        max-height: 400px; /* Altura máxima de las imágenes del carousel */
-        object-fit: cover; /* Ajusta el tamaño de las imágenes sin deformarlas */
-      }
-    .fancy-heading small.text-muted {
-      color: #6c757d; /* Color de texto secundario */
-    }
-     /* Default height for small devices */
-     #intro-example {
-      height: 400px;
-    }
-  
-    /* Height for devices larger than 992px */
-    @media (min-width: 992px) {
-      #intro-example {
-        height: 600px;
-      }
-    }
-  
-    /* Estilo para el título de la tarjeta */
-  .card-title {
-    color: #333; /* Color del texto */
-    font-size: 1.5rem; /* Tamaño de fuente */
-    margin-bottom: 1rem; /* Espacio inferior */
-  }
-  
-  /* Estilo para el texto de la tarjeta */
-  .card-text {
-    color: #666; /* Color del texto */
-    font-size: 1rem; /* Tamaño de fuente */
-  }
-  .card-body {
-    max-width: 100%; /* Limitar el ancho máximo */
-    padding: 1rem; 
-  }
-  
-  #registro a {
-    color: white;
-  }
-  
-  /* Estilo para el botón */
+  max-width: 400px; /* Ancho máximo del formulario */
+  margin: 0 auto; /* Centrar el formulario */
+  padding: 20px; /* Espaciado interno */
+}
 
-  #jenny {
-    padding-left: 50px;
-    height: 290px;
-    width: 280px;
+/* Estilo para los campos de entrada */
+.form-control {
+  border-radius: 10px; /* Borde redondeado */
+  border: 1px solid #ced4da; /* Borde */
+}
+
+/* Estilo para las etiquetas de los campos de entrada */
+.form-label {
+  color: #333; /* Color del texto */
+}
+
+/* Estilo para el botón de enviar */
+.btn-danger {
+  color: #fff; /* Color del texto */
+  border-radius: 10px; /* Borde redondeado */
+}
+
+/* Estilo para los enlaces dentro del texto del formulario */
+a {
+  color: white; /* Color del enlace */
+}
+
+a:hover {
+  text-decoration: underline; /* Subrayado al pasar el ratón */
+  color: white;
+}
+
+/* Estilo para los botones de registro */
+.btn-secondary {
+  margin: 5px; /* Margen entre botones */
+}
+
+/* Estilo para los íconos de los botones de registro */
+.btn-floating i {
+  font-size: 18px; /* Tamaño del ícono */
+}
+
+/* Estilos para el carousel */
+    #carouselExampleInterval {
+      max-width: auto; /* Ancho máximo del carousel */
+      margin: 0 auto; /* Centra el carousel horizontalmente */
+    }
+
+    .carousel-inner .carousel-item img {
+      max-height: 400px; /* Altura máxima de las imágenes del carousel */
+      object-fit: cover; /* Ajusta el tamaño de las imágenes sin deformarlas */
+    }
+  .fancy-heading small.text-muted {
+    color: #6c757d; /* Color de texto secundario */
+  }
+   /* Default height for small devices */
+   #intro-example {
+    height: 400px;
   }
 
-  #carlos {
-    padding-left: 50px;
-    height: 250px;
-    width: 280px;
+  /* Height for devices larger than 992px */
+  @media (min-width: 992px) {
+    #intro-example {
+      height: 600px;
+    }
   }
+
+  /* Estilo para el título de la tarjeta */
+.card-title {
+  color: #333; /* Color del texto */
+  font-size: 1.5rem; /* Tamaño de fuente */
+  margin-bottom: 1rem; /* Espacio inferior */
+}
+
+/* Estilo para el texto de la tarjeta */
+.card-text {
+  color: #666; /* Color del texto */
+  font-size: 1rem; /* Tamaño de fuente */
+}
+.card-body {
+  max-width: 100%; /* Limitar el ancho máximo */
+  padding: 1rem; 
+}
+
+#registro a {
+  color: white;
+}
+
+/* Estilo para el botón */
+
+#jenny {
+  padding-left: 50px;
+  height: 290px;
+  width: 280px;
+}
+
+#jose {
+  
+
+  padding-top: 15px;
+  padding-left: 50px;
+  height: 290px;
+  width: 280px;
+}

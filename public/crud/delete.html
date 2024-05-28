@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/operaciones.css">
+    <link rel="icon" href="/Img/logo.svg" type="image/png">
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+    rel="stylesheet"
+    />
+    <!-- Google Fonts -->
+    <link
+    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    rel="stylesheet"
+    />
+    <!-- MDB -->
+    <link
+    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/7.2.0/mdb.min.css"
+    rel="stylesheet"
+    />
+    <title>Eliminar Persona</title>
+</head>
+<body style="background-image: url(/Img/registro.jpg); background-size: cover;"></body>>
+    <header>
+        <!-- Navbar -->
+        <nav  class="navbar navbar-expand-lg bg-body fixed-top" >
+          <div  class="container-fluid">
+            <button
+              data-mdb-collapse-init
+              class="navbar-toggler"
+              type="button"
+              data-mdb-target="#navbarExample01"
+              aria-controls="navbarExample01"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <i class="fas fa-bars"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarExample01">
+      
+              <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/crud/get.html">Visualizar Datos</a><a ></a>
+                  <li class="nav-item active">
+                    <a class="nav-link" aria-current="page" href="put.html">Actualizar Datos</a>
+                  </li>
+              </ul>
+    
+              <div class="d-flex align-items-center">
+                
+                <button id="carro" type="button" class="btn btn-danger me-3">
+                <a class="nav-link" href="/"><i class="fa-solid fa-house"></i></a>
+                </button>
+                
+              </div>
+            </div>
+            </div>
+        </nav>
+        <hr>
+        <hr>
+        <hr>
+    <h1>Eliminar Persona</h1>
+    <form id="delete-form" class="container">
+        <label for="id">ID de la Persona:</label><br>
+        <input type="number" id="id" name="id"><br><br>
+        <button type="submit">Eliminar Persona</button>
+        <br>
+        <br>
+    </form>
+
+    <script src="/js/delete.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+</html>
